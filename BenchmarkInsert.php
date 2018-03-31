@@ -14,7 +14,7 @@ class BenchmarkInsert
         $dsn = "mysql:dbname={$dbName};host={$dbHost}";
         $this->pdo = new PDO($dsn, $dbUser, $dbPassword);
 
-		$this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+        $this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     }
 
     protected function insertQueryBuilder($table, $rows)

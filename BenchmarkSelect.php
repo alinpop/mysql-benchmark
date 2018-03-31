@@ -14,7 +14,7 @@ class BenchmarkSelect
         $dsn = "mysql:dbname={$dbName};host={$dbHost}";
         $this->pdo = new PDO($dsn, $dbUser, $dbPassword);
 
-		$this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+        $this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     }
 
 	public function getTableIds($idName = 'id')
