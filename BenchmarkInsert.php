@@ -4,7 +4,7 @@ class BenchmarkInsert
 {
     public $tableName;
     public $insertData;
-	
+
     protected $pdo;
     protected $outputMessage = "";
     protected $truncateTable = true;
@@ -14,7 +14,6 @@ class BenchmarkInsert
         $dsn = "mysql:dbname={$dbName};host={$dbHost}";
         $this->pdo = new PDO($dsn, $dbUser, $dbPassword);
 
-        var_dump($this->pdo->getAttribute(PDO::ATTR_EMULATE_PREPARES));exit;
 		$this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     }
 
@@ -92,7 +91,7 @@ class BenchmarkInsert
     public function runPreparedStatementInsert($max = 1000)
     {
         $this->outputMessage = "PREPARED STATEMENT INSERT";
-        
+
         $pdoStatement = null;
 
         $callbackBeforeLoop = function() use (&$pdoStatement){
